@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmovui0pxyxkm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7dm0k"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ig7tw"]
+width = 1000
+height = 1000
+in_3d_space = true
+noise = SubResource("FastNoiseLite_7dm0k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+albedo_texture = SubResource("NoiseTexture2D_ig7tw")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+cell_size = Vector3(1, 1, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 14.95, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 10, 8.66, 10)
+projection = 1
+size = 10.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+size = Vector3(10, 0.1, 10)
+material = SubResource("StandardMaterial3D_0xm2m")
