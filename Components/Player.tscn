@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mnek0s6d7imk"]
+
+[ext_resource type="Script" uid="uid://ba0ule3yfs6vw" path="res://Scripts/player.gd" id="1_b2ed3"]
+[ext_resource type="PackedScene" uid="uid://cppkca8vrat2y" path="res://Models/Obj_Test_002_Body.glb" id="2_wkx32"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_b2ed3")
+
+[node name="Obj_Test_002_Body" parent="." instance=ExtResource("2_wkx32")]

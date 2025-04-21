@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1wcuapqc2foh"]
+
+[ext_resource type="PackedScene" uid="uid://nihrr1hed0lo" path="res://Models/Obj_Test_004_Grid.glb" id="1_j13wd"]
+
+[node name="Tile" type="Node3D"]
+transform = Transform3D(0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 0, 0, 0)
+
+[node name="Obj_Test_004_Grid" parent="." instance=ExtResource("1_j13wd")]
