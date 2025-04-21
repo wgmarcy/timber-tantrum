@@ -1,32 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmovui0pxyxkm"]
+[gd_scene load_steps=3 format=3 uid="uid://dmovui0pxyxkm"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7dm0k"]
+[ext_resource type="PackedScene" uid="uid://mnek0s6d7imk" path="res://Components/Player.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cu7isn35u8tjt" path="res://Components/Grid.tscn" id="1_ig7tw"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ig7tw"]
-width = 1000
-height = 1000
-in_3d_space = true
-noise = SubResource("FastNoiseLite_7dm0k")
+[node name="Main" type="Node3D"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_texture = SubResource("NoiseTexture2D_ig7tw")
+[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 
-[node name="Node3D" type="Node3D"]
-
-[node name="GridMap" type="GridMap" parent="."]
-cell_size = Vector3(1, 1, 1)
+[node name="Grid" parent="." instance=ExtResource("1_ig7tw")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 14.95, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 10, 8.66, 10)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 6, 3.71338)
 projection = 1
-size = 10.0
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.87106, 0)
-size = Vector3(10, 0.1, 10)
-material = SubResource("StandardMaterial3D_0xm2m")
+size = 12.0
